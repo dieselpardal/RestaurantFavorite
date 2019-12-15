@@ -12,7 +12,7 @@ todos os dias gastam 30 minutos decidindo onde irão almoçar. Vamos fazer um 
 sistema que auxilie essa tomada de decisão!
 
 #### COMO JOGAR
-Na tela "GO TO RESTAURANT?", e deve observar 5 restaurantes diferentes, uma votação, 
+Na tela "ARE WE GOING TO THE RESTAURANT?", e deve observar 5 restaurantes diferentes, uma votação, 
 uma tabela de semana e o favorito.
 
 A semana inicializa a segunda-feira. 

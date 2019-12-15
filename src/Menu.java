@@ -13,7 +13,7 @@ public class Menu {
 
     public void screen() {
         Tool tool = new Tool();
-        tool.show("WE GO TO RESTAURANT?");
+        tool.show("ARE WE GOING TO THE RESTAURANT?");
         String choose;
         do {
             tool.show(tool.subline(40));
