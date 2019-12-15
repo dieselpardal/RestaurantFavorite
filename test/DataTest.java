@@ -5,8 +5,6 @@ import static junit.framework.TestCase.assertNull;
 
 public class DataTest {
 
-
-
     @Test(expected=NullPointerException.class)
     public void caseAdd() {
         Data data = new Data(2);
