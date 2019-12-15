@@ -44,25 +44,28 @@ Todas informaçoes no código são em inglês.
 
 #### INSTALAÇÃO
 
-1) Instalacao IntelliJ IDEA versão COMUNITY 2018.3.4
+1) Instalacão de IntelliJ IDEA versão COMUNITY 2018.3.4
+
     Primeiro passo é que instalar uma plataforma de desenvolvimento de software 
     IntelliJ IDEA que permite trabalhar o utilizada o projeto de Restaurante.
 
-2) Instalacao JAVA
+2) Instalacao de JAVA
+
     Instalar o Java, que permitira a execucao de codigos criados em Java.
     Java eh uma linguagem de programação orientada a objetos.
 
-3) Instalação JUNIT
+3) Instalação de JUNIT
+
    JUnit é um framework que facilita o desenvolvimento e execução de testes unitários em código Java.
    Para usar o JUNIT, você precisa ter o JDK instalado. Você também pode integrá-lo à sua IDE.
    Para instalar JUNIT, entra no link https://www.jetbrains.com/help/idea/configuring-testing-libraries.html
    Após de desenvolver o código, execute Test.
    Para permite os resultados de testes pelo JUNIT.
   
-4) Instalação Mock
-   Para instalar manualmente, seleciona **File | Project Struture** na toolbar.
-   Seleciona **Project Settings | Libraries | New Project Library button | From Maven.**
-   Escolhe um dos bibilioteca de Mockito na janela. 
+4) Instalação de ByteArrayOutputStream para teste
+
+   A classe que implementou um saída de dados no qual os dados são gravados em _byte array_.
+   Clique botão direita e escolhe install import class.
    
    
    
