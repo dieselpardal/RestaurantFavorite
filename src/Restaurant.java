@@ -47,7 +47,7 @@ public class Restaurant {
     public void showFavorite() {
         StringBuilder row = new StringBuilder();
         for (int favorite: this.favorites ) {
-            row.append(this.tool.tab(board.getIsFavorites(favorite), spaceTab));
+            row.append(this.tool.tab(board.getIsFavorites(favorite), this.spaceTab));
         }
         this.tool.show("Favorite: "+row);
     }
