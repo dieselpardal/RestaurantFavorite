@@ -5,8 +5,8 @@ public class Restaurant {
     final int notvote = 0;
     final int spaceTab = 15;
     final int spaceTabVote = 22;
-    private int[] favorites;
-    private int[] votes;
+    private Data favorites;
+    private Data votes;
 
     Tool tool = new Tool();
     Board board = new Board();
@@ -16,23 +16,23 @@ public class Restaurant {
     }
 
     public void clearFavorite() {
-        this.favorites = new int[board.getCountRestaurants()];
+        this.favorites = new Data(board.getCountRestaurants());
         for(int i=0; i<board.getCountRestaurants(); i++) {
-            this.favorites[i] = this.NULL;
+            favorites.add(this.NULL);
         }
     }
 
     public void clearVote() {
-        this.votes = new int[board.getCountRestaurants()];
+        this.votes = new Data(board.getCountRestaurants());
         for(int i=0; i<board.getCountRestaurants(); i++) {
-            this.votes[i] = this.notvote;
+            this.votes.add(this.notvote);
         }
     }
 
     public void showList() {
         int i=0;
         for (String name: board.getRestaurants() ) {
-            this.tool.show((i+1)+": "+this.tool.tab(name,spaceTabVote)+this.votes[i++]);
+            this.tool.show((i+1)+": "+this.tool.tab(name,spaceTabVote)+this.votes.get(i++));
         }
     }
 
@@ -46,7 +46,7 @@ public class Restaurant {
 
     public void showFavorite() {
         StringBuilder row = new StringBuilder();
-        for (int favorite: this.favorites ) {
+        for (int favorite: this.favorites.getAll() ) {
             row.append(this.tool.tab(board.getIsFavorites(favorite), this.spaceTab));
         }
         this.tool.show("Favorite: "+row);
@@ -66,13 +66,15 @@ public class Restaurant {
     public boolean favoriteChoosed(String choose) {
         if(choose.toUpperCase().equals("E"))
             return false;
+        if(choose.isEmpty())
+            return true;
         int restaurant=Integer.parseInt(choose);
         if( !board.isMaxWeek(restaurant)) {
             System.out.println("Only number of restaurants: 1 to " + board.getCountRestaurants());
         } else if( isNotExistThisWeek(restaurant)) {
               this.vote(restaurant);
               board.nextWeek();
-              this.isNewWeekShow();
+              this.checkNewWeekShow();
         } else {
             System.out.println("Restaurant cannot be repeated during the week.");
         }
@@ -83,7 +85,7 @@ public class Restaurant {
         int day = 0;
         while (day < board.getCountWeeks()) {
                 if (day != board.getNumWeek()) {
-                    if (restaurant == favorites[day]) {
+                    if (restaurant == this.favorites.get(day)) {
                         return false;
                     }
                 }
@@ -92,7 +94,7 @@ public class Restaurant {
         return true;
     }
 
-    private void isNewWeekShow() {
+    private void checkNewWeekShow() {
         if(board.getNumWeek()== 0) {
             this.tool.show("Next Week!");
             clearFavorite();
@@ -100,8 +102,8 @@ public class Restaurant {
     }
 
     private void vote(int restaurant) {
-        this.favorites[board.getNumWeek()] = restaurant;
-        this.votes[restaurant - 1]++;
+        this.favorites.set(board.getNumWeek(),restaurant);
+        this.votes.set(restaurant - 1, this.votes.get(restaurant - 1) + 1);
     }
 
 }
