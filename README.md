@@ -1,4 +1,4 @@
-PROJETO DE RESTAURANTE FAVORITO
+PROJETO DE FAVORITO DE RESTAURANTE
 =
 - versão 1.0 por desenolvedor Full Stack **Ivan Diesel**
 - dieselpardal@gmail.com
@@ -12,16 +12,16 @@ todos os dias gastam 30 minutos decidindo onde irão almoçar. Vamos fazer um 
 sistema que auxilie essa tomada de decisão!
 
 #### COMO JOGAR
-Na tela "VAMOS RESTAURANTE?", e deve observar 5 restaurantes diferentes, votação e 
-tabela de semana e favorito.
+Na tela "GO TO RESTAURANT?", e deve observar 5 restaurantes diferentes, uma votação, 
+uma tabela de semana e o favorito.
 
-A semana Inicializa a segunda-feira. 
+A semana inicializa a segunda-feira. 
 
 Usuário pode escolher um número de favorito de restaurante e colocar a votação.
 
 Após de concluir a final de semana, será novo favorito na próxima semana.
 
-Regra: não pode repetir mais uma vez nessa semana. Somente permite na próxima semana.
+Regra: não pode repetir mais uma vez nessa semana. Somente permite o caso da próxima semana.
 
 A lista de votação é que resultado de restaurante escolhido.
 
