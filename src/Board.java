@@ -5,39 +5,39 @@ public class Board {
     private int numWeek = 0;
 
     public void setNumWeek(int num) {
-        numWeek = num;
+        this.numWeek = num;
     }
 
     public int getNumWeek() {
-        return numWeek;
+        return this.numWeek;
     }
 
     public void nextWeek() {
-        numWeek = numWeek < this.weeks.length - 1 ? numWeek + 1 : 0;
+        this.numWeek = this.numWeek < this.weeks.length - 1 ? this.numWeek + 1 : 0;
     }
 
     public boolean isMaxWeek(int restaurant) {
-        return restaurant>0 && restaurant <= weeks.length;
+        return restaurant>0 && restaurant <= this.weeks.length;
     }
 
     public int getCountRestaurants() {
-        return restaurants.length;
+        return this.restaurants.length;
     }
 
     public int getCountWeeks() {
-        return weeks.length;
+        return this.weeks.length;
     }
 
     public String[] getRestaurants() {
-        return restaurants;
+        return this.restaurants;
     }
 
     public String[] getWeeks() {
-        return weeks;
+        return this.weeks;
     }
 
     public String getWeek(int today) {
-        return weeks[today];
+        return this.weeks[today];
     }
 
     public String getIsFavorites(int favorite) {
